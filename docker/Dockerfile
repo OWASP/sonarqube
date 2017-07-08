@@ -29,7 +29,7 @@ RUN set -x \
     && wget --no-verbose https://sonarsource.bintray.com/Distribution/sonar-csharp-plugin/sonar-csharp-plugin-$SQ_CSHARP_VERSION.jar \
     && wget --no-verbose https://sonarsource.bintray.com/Distribution/sonar-xml-plugin/sonar-xml-plugin-$SQ_XML_VERSION.jar \
     && wget --no-verbose https://sonarsource.bintray.com/Distribution/sonar-web-plugin/sonar-web-plugin-$SQ_WEB_VERSION.jar \
-    && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/ldap/sonar-ldap-plugin/$SQ_LDAP_VERSION/sonar-ldap-plugin-$SQ_LDAP_VERSION.jar \
+    && wget --no-verbose https://sonarsource.bintray.com/Distribution/sonar-ldap-plugin/sonar-ldap-plugin-$SQ_LDAP_VERSION.jar \
     && wget --no-verbose https://sonarsource.bintray.com/Distribution/sonar-github-plugin/sonar-github-plugin-$SQ_GITHUB_VERSION.jar \
     && wget --no-verbose https://github.com/uartois/sonar-golang/releases/download/v$SQ_GO_VERSION/sonar-golang-plugin-$SQ_GO_VERSION.jar \
     && wget --no-verbose https://github.com/stepstone-tech/sonar-coldfusion/releases/download/$SQ_CF_VERSION/sonar-coldfusion-plugin-$SQ_CF_VERSION.jar \
