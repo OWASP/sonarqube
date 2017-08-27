@@ -41,5 +41,5 @@ RUN set -x \
 
 WORKDIR $SONARQUBE_HOME
 COPY run.sh $SONARQUBE_HOME/bin/
-RUN chmod +x $SONARQUBE_HOME/bin/run.sh
+RUN dos2unix $SONARQUBE_HOME/bin/run.sh && chmod +x $SONARQUBE_HOME/bin/run.sh
 ENTRYPOINT ["./bin/run.sh"]
