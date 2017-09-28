@@ -2,7 +2,7 @@ FROM sonarqube:6.5-alpine
 
 ENV SQ_GIT_VERSION=1.3.0.769 \
     SQ_SVN_VERSION=1.5.0.782 \
-    SQ_JAVA_VERSION=4.14.0.11784 \
+    SQ_JAVA_VERSION=4.15.0.11862 \
     SQ_JS_VERSION=3.2.0.5305 \
     SQ_TS_VERSION=1.1.0.380 \
     SQ_PHP_VERSION=2.11.0.2299 \
@@ -16,7 +16,7 @@ ENV SQ_GIT_VERSION=1.3.0.769 \
     SQ_FINDSEC_VERSION=3.6.0 \
     SQ_GITHUB_VERSION=1.5.0.966 \
     SQ_GITLAB_VERSION=2.1.0 \
-    SQ_PITEST_VERSION=0.8-RC2 \
+    SQ_PITEST_VERSION=0.8 \
     SQ_CITY_VERSION=1.0
 
 RUN set -x \
@@ -38,7 +38,7 @@ RUN set -x \
     && wget --no-verbose https://github.com/stepstone-tech/sonar-coldfusion/releases/download/$SQ_CF_VERSION/sonar-coldfusion-plugin-$SQ_CF_VERSION.jar \
     && wget --no-verbose https://github.com/gabrie-allaigre/sonar-gitlab-plugin/releases/download/$SQ_GITLAB_VERSION/sonar-gitlab-plugin-$SQ_GITLAB_VERSION.jar \
     && wget --no-verbose https://github.com/SonarQubeCommunity/sonar-findbugs/releases/download/$SQ_FINDSEC_VERSION/sonar-findbugs-plugin-$SQ_FINDSEC_VERSION.jar \
-    && wget --no-verbose https://github.com/VinodAnandan/sonar-pitest/releases/download/v$SQ_PITEST_VERSION/sonar-pitest-plugin-$SQ_PITEST_VERSION.jar \
+    && wget --no-verbose https://github.com/VinodAnandan/sonar-pitest/releases/download/$SQ_PITEST_VERSION/sonar-pitest-plugin-$SQ_PITEST_VERSION.jar \
     && wget --no-verbose https://github.com/stefanrinderle/softvis3d/releases/download/softvis3d-$SQ_CITY_VERSION/sonar-softvis3d-plugin-$SQ_CITY_VERSION.jar
 
 WORKDIR $SONARQUBE_HOME
