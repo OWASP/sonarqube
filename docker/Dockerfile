@@ -1,4 +1,4 @@
-FROM sonarqube:6.5-alpine
+FROM sonarqube:6.6-alpine
 
 ENV SQ_GIT_VERSION=1.3.0.875 \
     SQ_SVN_VERSION=1.6.0.862 \
