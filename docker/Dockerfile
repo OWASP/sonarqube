@@ -1,10 +1,10 @@
-FROM sonarqube:6.7-alpine
+FROM sonarqube:6.7.1-alpine
 
 ENV SQ_GIT_VERSION=1.4.0.939 \
     SQ_SVN_VERSION=1.7.0.916 \
     SQ_JAVA_VERSION=4.16.0.12584 \
     SQ_JS_VERSION=3.4.0.5769 \
-    SQ_TS_VERSION=1.3.0.1511 \
+    SQ_TS_VERSION=1.4.0.1796 \
     SQ_PHP_VERSION=2.13.0.2896 \
     SQ_PY_VERSION=1.9.0.1726 \
     SQ_CSHARP_VERSION=6.8.0.4273 \
@@ -46,4 +46,9 @@ RUN set -x \
 WORKDIR $SONARQUBE_HOME
 COPY run.sh $SONARQUBE_HOME/bin/
 RUN dos2unix $SONARQUBE_HOME/bin/run.sh && chmod +x $SONARQUBE_HOME/bin/run.sh
+
+RUN chmod -R 777 $SONARQUBE_HOME
+RUN chown -R sonarqube:sonarqube $SONARQUBE_HOME
+USER sonarqube
+
 ENTRYPOINT ["./bin/run.sh"]
