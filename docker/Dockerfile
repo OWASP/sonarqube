@@ -1,21 +1,20 @@
 FROM sonarqube:6.7.3-alpine
 
-ENV SQ_GIT_VERSION=1.4.0.939 \
-    SQ_SVN_VERSION=1.7.0.916 \
-    SQ_JAVA_VERSION=5.1.0.12828 \
-    SQ_JS_VERSION=3.4.0.5769 \
-    SQ_TS_VERSION=1.4.0.1796 \
-    SQ_PHP_VERSION=2.13.0.2896 \
-    SQ_PY_VERSION=1.9.0.1726 \
-    SQ_CSHARP_VERSION=6.8.0.4273 \
-    SQ_XML_VERSION=1.5.0.1225 \
-    SQ_WEB_VERSION=2.6.0.896 \
-    SQ_LDAP_VERSION=2.2.0.640 \
-    SQ_GITHUB_VERSION=1.4.2.1056 \
-    SQ_GO_VERSION=1.2.11-rc7 \
-    SQ_CF_VERSION=1.5.0 \
-    SQ_GITLAB_VERSION=2.1.0 \
-    SQ_FINDSEC_VERSION=3.6.0 \
+ENV SQ_GIT_VERSION=1.5.0.1113 \
+    SQ_SVN_VERSION=1.8.0.1093 \
+    SQ_JAVA_VERSION=5.4.0.13884 \
+    SQ_JS_VERSION=4.1.0.6202 \
+    SQ_TS_VERSION=1.7.0.2567 \
+    SQ_PHP_VERSION=2.14.0.3159 \
+    SQ_PY_VERSION=1.11.0.2153 \
+    SQ_CSHARP_VERSION=7.2.0.5235 \
+    SQ_XML_VERSION=1.6.0.1419 \
+    SQ_WEB_VERSION=2.7.0.1103 \
+    SQ_LDAP_VERSION=2.2.0.662 \
+    SQ_GITHUB_VERSION=1.4.2.1217 \
+    SQ_GO_VERSION=1.2.11 \
+    SQ_GITLAB_VERSION=3.0.1 \
+    SQ_FINDSEC_VERSION=3.7.0 \
     SQ_PITEST_VERSION=0.9 \
     SQ_DPCHECK_VERSION=1.1.0 \
     SQ_CITY_VERSION=1.0
@@ -36,7 +35,6 @@ RUN set -x \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/ldap/sonar-ldap-plugin/$SQ_LDAP_VERSION/sonar-ldap-plugin-$SQ_LDAP_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/github/sonar-github-plugin/$SQ_GITHUB_VERSION/sonar-github-plugin-$SQ_GITHUB_VERSION.jar \
     && wget --no-verbose https://github.com/uartois/sonar-golang/releases/download/v$SQ_GO_VERSION/sonar-golang-plugin-$SQ_GO_VERSION.jar \
-    && wget --no-verbose https://github.com/stepstone-tech/sonar-coldfusion/releases/download/$SQ_CF_VERSION/sonar-coldfusion-plugin-$SQ_CF_VERSION.jar \
     && wget --no-verbose https://github.com/gabrie-allaigre/sonar-gitlab-plugin/releases/download/$SQ_GITLAB_VERSION/sonar-gitlab-plugin-$SQ_GITLAB_VERSION.jar \
     && wget --no-verbose https://github.com/SonarQubeCommunity/sonar-findbugs/releases/download/$SQ_FINDSEC_VERSION/sonar-findbugs-plugin-$SQ_FINDSEC_VERSION.jar \
     && wget --no-verbose https://github.com/VinodAnandan/sonar-pitest/releases/download/v$SQ_PITEST_VERSION/sonar-pitest-plugin-$SQ_PITEST_VERSION.jar \
