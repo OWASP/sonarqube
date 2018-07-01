@@ -27,4 +27,4 @@ exec su-exec sonarqube \
   -Dsonar.ce.javaOpts="$SONARQUBE_CE_JVM_OPTS" \
   -Dsonar.web.javaOpts="$SONARQUBE_WEB_JVM_OPTS" \
   -Dsonar.web.javaAdditionalOpts="-Djava.security.egd=file:/dev/./urandom" \
-  "$@
+  "$@"
