@@ -61,7 +61,7 @@ RUN set -x \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/web/sonar-web-plugin/$SQ_WEB_VERSION/sonar-web-plugin-$SQ_WEB_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/ldap/sonar-ldap-plugin/$SQ_LDAP_VERSION/sonar-ldap-plugin-$SQ_LDAP_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/github/sonar-github-plugin/$SQ_GITHUB_VERSION/sonar-github-plugin-$SQ_GITHUB_VERSION.jar \
-    && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/go/sonar-go-plugin/SQ_GO_VERSION/sonar-go-plugin-SQ_GO_VERSION.jar \
+    && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/go/sonar-go-plugin/$SQ_GO_VERSION/sonar-go-plugin-$SQ_GO_VERSION.jar \
     && wget --no-verbose https://github.com/gabrie-allaigre/sonar-gitlab-plugin/releases/download/$SQ_GITLAB_VERSION/sonar-gitlab-plugin-$SQ_GITLAB_VERSION.jar \
     && wget --no-verbose https://github.com/SonarQubeCommunity/sonar-findbugs/releases/download/$SQ_FINDSEC_VERSION/sonar-findbugs-plugin-$SQ_FINDSEC_VERSION.jar \
     && wget --no-verbose https://github.com/VinodAnandan/sonar-pitest/releases/download/v$SQ_PITEST_VERSION/sonar-pitest-plugin-$SQ_PITEST_VERSION.jar \
