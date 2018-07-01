@@ -6,8 +6,8 @@ if [ "${1:0:1}" != '-' ]; then
   exec "$@"
 fi
 
-#chown -R sonarqube:sonarqube $SONARQUBE_HOME
-exec
+chown -R sonarqube:sonarqube $SONARQUBE_HOME
+exec su-exec sonarqube \
   java -jar lib/sonar-application-$SONAR_VERSION.jar \
   -Dsonar.log.console=true \
   -Dsonar.jdbc.username="$SONARQUBE_JDBC_USERNAME" \
@@ -27,4 +27,4 @@ exec
   -Dsonar.ce.javaOpts="$SONARQUBE_CE_JVM_OPTS" \
   -Dsonar.web.javaOpts="$SONARQUBE_WEB_JVM_OPTS" \
   -Dsonar.web.javaAdditionalOpts="-Djava.security.egd=file:/dev/./urandom" \
-  "$@"
+  "$@
