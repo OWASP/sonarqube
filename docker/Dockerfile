@@ -1,24 +1,23 @@
 FROM openjdk:8-alpine
 
-ENV SONAR_VERSION=7.2.1 \
+ENV SONAR_VERSION=7.4 \
     SONARQUBE_HOME=/opt/sonarqube \
-    SQ_GIT_VERSION=1.5.0.1176 \
-    SQ_SVN_VERSION=1.8.0.1158 \
-    SQ_JAVA_VERSION=5.6.0.14668 \
-    SQ_JS_VERSION=4.1.0.6281 \
-    SQ_TS_VERSION=1.7.0.2913 \
-    SQ_PHP_VERSION=2.14.0.3223 \
-    SQ_PY_VERSION=1.11.0.2212 \
-    SQ_CSHARP_VERSION=7.3.0.5654 \
-    SQ_XML_VERSION=1.6.0.1499 \
-    SQ_WEB_VERSION=2.7.0.1155 \
-    SQ_LDAP_VERSION=2.2.0.671 \
-    SQ_GITHUB_VERSION=1.5.0.1280 \
-    SQ_GO_VERSION=1.2.0.1628 \
-    SQ_GITLAB_VERSION=3.0.1 \
-    SQ_FINDSEC_VERSION=3.7.0 \
+    SQ_GIT_VERSION=1.6.0.1363 \
+    SQ_SVN_VERSION=1.9.0.1310 \
+    SQ_JAVA_VERSION=5.9.0.16236 \
+    SQ_JS_VERSION=5.1.0.6994 \
+    SQ_TS_VERSION=1.9.0.3398 \
+    SQ_PHP_VERSION=2.16.0.4074 \
+    SQ_PY_VERSION=1.11.0.2361 \
+    SQ_CSHARP_VERSION=7.8.0.7319 \
+    SQ_XML_VERSION=1.6.0.1637 \
+    SQ_LDAP_VERSION=2.2.0.689 \
+    SQ_GITHUB_VERSION=1.5.0.1403 \
+    SQ_GO_VERSION=1.2.0.1735 \
+    SQ_GITLAB_VERSION=3.0.2 \
+    SQ_FINDSEC_VERSION=3.8.0 \
     SQ_PITEST_VERSION=0.9.1 \
-    SQ_DPCHECK_VERSION=1.1.0 \
+    SQ_DPCHECK_VERSION=1.1.1 \
     SQ_OIDC_VERSION=1.0.4 \
     SQ_CITY_VERSION=1.0.1 \
     # Database configuration
@@ -40,8 +39,8 @@ RUN set -x \
     && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE \
     && mkdir /opt \
     && cd /opt \
-    && wget -O sonarqube.zip --no-verbose https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
-    && wget -O sonarqube.zip.asc --no-verbose https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip.asc \
+    && wget -O sonarqube.zip --no-verbose https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
+    && wget -O sonarqube.zip.asc --no-verbose https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip.asc \
     && gpg --batch --verify sonarqube.zip.asc sonarqube.zip \
     && unzip sonarqube.zip \
     && mv sonarqube-$SONAR_VERSION sonarqube \
@@ -58,7 +57,6 @@ RUN set -x \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/python/sonar-python-plugin/$SQ_PY_VERSION/sonar-python-plugin-$SQ_PY_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/dotnet/sonar-csharp-plugin/$SQ_CSHARP_VERSION/sonar-csharp-plugin-$SQ_CSHARP_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/xml/sonar-xml-plugin/$SQ_XML_VERSION/sonar-xml-plugin-$SQ_XML_VERSION.jar \
-    && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/web/sonar-web-plugin/$SQ_WEB_VERSION/sonar-web-plugin-$SQ_WEB_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/ldap/sonar-ldap-plugin/$SQ_LDAP_VERSION/sonar-ldap-plugin-$SQ_LDAP_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/github/sonar-github-plugin/$SQ_GITHUB_VERSION/sonar-github-plugin-$SQ_GITHUB_VERSION.jar \
     && wget --no-verbose https://repox.sonarsource.com/sonarsource-public-builds/org/sonarsource/go/sonar-go-plugin/$SQ_GO_VERSION/sonar-go-plugin-$SQ_GO_VERSION.jar \
