@@ -1,23 +1,23 @@
 FROM openjdk:8-alpine
 
-ENV SONAR_VERSION=7.4 \
+ENV SONAR_VERSION=7.6 \
     SONARQUBE_HOME=/opt/sonarqube \
-    SQ_GIT_VERSION=1.6.0.1363 \
-    SQ_SVN_VERSION=1.9.0.1310 \
-    SQ_JAVA_VERSION=5.10.0.16419 \
-    SQ_JS_VERSION=5.1.0.6994 \
-    SQ_TS_VERSION=1.9.0.3398 \
-    SQ_PHP_VERSION=2.16.0.4074 \
-    SQ_PY_VERSION=1.11.0.2361 \
-    SQ_CSHARP_VERSION=7.8.0.7429 \
-    SQ_XML_VERSION=1.6.0.1637 \
-    SQ_LDAP_VERSION=2.2.0.689 \
-    SQ_GITHUB_VERSION=1.5.0.1403 \
-    SQ_GO_VERSION=1.2.0.1735 \
-    SQ_GITLAB_VERSION=3.0.2 \
-    SQ_FINDSEC_VERSION=3.8.0 \
+    SQ_GIT_VERSION=1.8.0.1538 \
+    SQ_SVN_VERSION=1.9.0.1438 \
+    SQ_JAVA_VERSION=5.11.0.17171 \
+    SQ_JS_VERSION=5.1.0.7267 \
+    SQ_TS_VERSION=1.9.0.3766 \
+    SQ_PHP_VERSION=3.1.0.4543 \
+    SQ_PY_VERSION=1.13.0.2739 \
+    SQ_CSHARP_VERSION=7.12.0.8086 \
+    SQ_XML_VERSION=2.1.0.2057 \
+    SQ_LDAP_VERSION=2.2.0.702 \
+    SQ_GITHUB_VERSION=1.5.0.1512 \
+    SQ_GO_VERSION=1.2.0.1825 \
+    SQ_GITLAB_VERSION=4.0.0 \
+    SQ_FINDSEC_VERSION=3.10.0 \
     SQ_PITEST_VERSION=0.9.1 \
-    SQ_DPCHECK_VERSION=1.1.1 \
+    SQ_DPCHECK_VERSION=1.2.1 \
     SQ_OIDC_VERSION=1.0.4 \
     SQ_CITY_VERSION=1.0.1 \
     # Database configuration
@@ -37,6 +37,7 @@ RUN set -x \
     && apk add --no-cache su-exec \
     && apk add --no-cache bash \
     && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE \
+    && rm -rf /opt \
     && mkdir /opt \
     && cd /opt \
     && wget -O sonarqube.zip --no-verbose https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
