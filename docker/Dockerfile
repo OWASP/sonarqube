@@ -20,9 +20,9 @@ ENV SONAR_VERSION=7.6 \
     SQ_CITY_VERSION=1.0.1 \
     # Database configuration
     # Defaults to using H2
-    SONARQUBE_JDBC_USERNAME=sonar \
-    SONARQUBE_JDBC_PASSWORD=sonar \
-    SONARQUBE_JDBC_URL=
+    SONARQUBE_JDBC_USERNAME=root \
+    SONARQUBE_JDBC_PASSWORD=root \
+    SONARQUBE_JDBC_URL=jdbc:mysql://127.0.01:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false
 
 # Http port
 EXPOSE 9000
